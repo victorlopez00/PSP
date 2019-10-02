@@ -6,6 +6,7 @@ public class main {
             Tic tic = new Tic();
             Tac tac = new Tac();
             while(true){
+
                 tic.run();
                 tac.run();
             }
