@@ -7,9 +7,10 @@ public class Pong extends Thread{
         this.cola = cola;
     }
     public void run(){
+
         String valor = "";
         while(true){
-            valor = cola.decirPing();
+            valor = cola.dPong();
             System.out.println(valor);
             try {
                 sleep(1000);

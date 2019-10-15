@@ -1,9 +1,10 @@
 package EjercicioPingPong;
 
 public class Cola {
+
     private boolean disponible= false;
 
-    public synchronized String decirPing(){
+    public synchronized String dPong(){
         while(!disponible){
             try{
                 wait();
@@ -14,9 +15,10 @@ public class Cola {
         }
         disponible = false;
         notify();
-        return "Ping";
+
+        return "Pong";
     }
-    public synchronized String decirPong(){
+    public synchronized String dPing(){
         while(disponible){
             try{
                 wait();
@@ -26,7 +28,9 @@ public class Cola {
         }
         disponible = true;
         notify();
-        return "Pong";
+
+        return "Ping";
+
     }
 
 }

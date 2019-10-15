@@ -12,7 +12,7 @@ public class Ping extends Thread{
         super.run();
         String valor="";
         while(true){
-            valor =cola.decirPong();
+            valor =cola.dPing();
             System.out.println(valor);
             contador++;
             try {
