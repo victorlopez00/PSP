@@ -33,14 +33,16 @@ public class Cuenta {
     }
     public synchronized void ingreso(double ingreso){
         if(ingreso+saldo > valorMaximo){
-            System.out.println("No se puede ingresar tal cantidad supera el valor maximo");
+            System.out.println("No se puede ingresar esa cantidad, ya que supera el valor maximo");
+        }else {
+            this.saldo = saldo + ingreso;
+            }
         }
-        this.saldo = saldo + ingreso;
-    }
     public synchronized void reintegro(double reintegro){
         if((saldo-reintegro) < 0){
-            System.out.println("No se puede retirar tal cantidad de dinero");
+            System.out.println("No se puede retirar esa cantidad de dinero ya que no hay saldo suficiente");
+        }else {
+            this.saldo = saldo - reintegro;
         }
-        this.saldo = saldo - reintegro;
     }
 }
